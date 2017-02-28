@@ -1,32 +1,34 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
     "target": "es5",
     "noImplicitAny": true,
-    "noLib": false,
+    "noEmitOnError": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es6", "es2015", "dom"],
-    "outDir": "dist/",
-    "rootDir": ".",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "sourceMap": true,
-    "removeComments": false,
+    "inlineSources": true,
+    "stripInternal": false,
     "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules"
-    ],
-    "types": [
-      "node",
-      "express",
-      "jasmine",
-      "protractor",
-      "systemjs"
+      "./node_modules/@types/!(node)"
     ]
   },
   "exclude": [
-    "node_modules",
-    "gulp",
+    "**/*.spec.*",
+    "assets",
     "dist",
-    "assets"
-  ]
+    "gulp",
+    "node_modules",
+    "scripts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "dist",
+    "skipTemplateCodegen": true,
+    "debug": true
+  }
 }
